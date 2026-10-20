@@ -19,7 +19,12 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          if [ -f "package.json" ]; then
+            npm install
+          elif [ -d "backend" ]; then
+            cd backend && npm install
+          fi
 
   deploy:
     needs: build-and-test
@@ -35,5 +40,8 @@ jobs:
           script: |
             cd ~/edublitz-e-commerce-application-shopitry
             git pull origin main
+            if [ -d "backend" ]; then
+              cd backend
+            fi
             npm install --production
-            pm2 restart shopitry-app || pm2 start server.js --name "shopitry-app"
+            pm2 restart shopitry-app || pm2 start server.js --name "shopitry-app" || pm2 start index.js --name "shopitry-app"
