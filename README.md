@@ -1,7 +1,15 @@
 # ShopiTry: Full-Stack Microservices E-Commerce Ecosystem
 
 Welcome to **ShopiTry**—a production-ready, decoupled microservices e-commerce platform built using Node.js, MongoDB Atlas, AWS deployment primitives, and two distinct React single-page applications (`storefront` and `admin-dashboard`).
+## 🌐 Live Application Demo
+* **Public URL:** http://52.23.182.235
 
+## 🛠️ DevOps & Automated CI/CD Pipeline
+* **Cloud Infrastructure:** AWS EC2 (Ubuntu)
+* **CI/CD Automation:** GitHub Actions
+* **Secrets Management:** `SERVER_HOST`, `SERVER_USER`, `SERVER_SSH_KEY`
+
+---
 ---
 
 ## 📖 About the Application
